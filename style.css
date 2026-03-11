@@ -1,0 +1,757 @@
+/* ==========================================================================
+            CONFIGURACIÓN PARA TODA LA PÁGINA, SELECCIONA TODO
+   ========================================================================== */
+
+html {
+    scroll-behavior: smooth;    /* Para que la página se deslice suavemente */
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+section {
+    scroll-margin-top: 92px;    /* Sirve para ajustar el header fijo. */
+}
+
+/* ==========================================================================
+                              HEADER
+   ========================================================================== */
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 15%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+.Contenedor-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;                  /*el rem se basa en el tamaño de la letra. Si la letra es más grande, el espacio crece proporcionalmente, y el gap es para separarlos entre sí. Es similar al margin y padding */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-decoration: none;
+}
+
+
+header .Contenedor-logo h1 {
+    color: #0038A8;
+}
+
+
+.Logo-header{
+    height: 60px;
+}
+
+.menu-arriba {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    font-size: 1rem;
+    gap: 2.5rem;
+}
+
+.menu-arriba a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 800;
+    font-size: 0.9rem;
+    transition: 0.3s; 
+    transition-property: color; 
+    transition-timing-function: ease; 
+
+}
+
+.menu-arriba a:hover {
+    color: #F7444E;
+
+}
+
+.menu-arriba a.inicio-rojo {
+    color:#F7444E
+}
+
+/* ==========================================================================
+                              PORTADA / INICIO
+   ========================================================================== */
+
+.Portada {
+    margin-top: 92px;
+    height: calc(100vh - 92px);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),    /* Pone la imagen de inicio más "apagada" para que se vea mejor las letras blancas. Si se quiere poner con más brillo, modificar el último número. Cuanto más alto, más apagado */
+                      url('Imágenes/Fondo-web2.webp');   
+    background-position: center;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    padding-left: 10%;
+    color: white;
+}   
+
+.contenido-destacado{
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 40px 60px;                 
+    border-radius: 10px;                
+    max-width: 600px;      
+    text-align: center;  
+    font-weight: 600;
+    width: 90%;
+    max-width: 380px;   
+     
+}
+
+.contenido-destacado h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #F7444E;                   
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0px #000, 
+                 4px 4px 10px rgba(0,0,0,0.8);   
+
+}
+
+.contenido-destacado p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.6; 
+    text-shadow: 2px 2px 0px #000, 
+                 4px 4px 10px rgba(0,0,0,0.8);   
+
+}
+
+.Boton-Portada {
+    padding: 12px 30px;
+    background-color: #F7444E;
+    border: none;
+    color: white;
+    font-weight: 900;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    outline: none;
+
+}
+
+.Boton-Portada:hover {
+    background-color: #ffffff;
+    color: black;
+    }
+
+ /* ==========================================================================
+                            SECCIÓN DE QUÉ ES
+   ========================================================================== */
+
+.icono-fa {
+    font-size: 3.5rem;   
+    color: white;        
+    margin-bottom: 20px; 
+    display: block;     
+}
+
+.menu-tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 50px 10%;
+}
+
+
+.tarjeta-contaminacion {
+    background-color: #002c3e; 
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    max-width: 350px;
+}
+
+.titulo-introduccion {
+    text-align: center;
+    padding: 60px 15% 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.titulo-introduccion h2 {
+    color: #000;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block; 
+    padding-bottom: 15px;
+}
+
+.titulo-introduccion h2::after {
+    content: "";                         /* Esto no se puede quitar, hace que se pueda poner la raya roja */
+    position: absolute;
+    bottom: 0;
+    left: 50%;                       /* Con esto se ajusta la linea. */
+    transform: translateX(-13%);    /* Con esto se ajusta la linea. */
+    width: 280px; 
+    height: 4px; 
+    background-color: #F7444E; 
+    border-radius: 2px; 
+}
+
+
+.texto-introduccion {
+    display: flex;
+    align-items: stretch;
+    gap: 4rem;
+    padding: 0;
+    background-color: #002c3e;
+}
+
+.Foto-sostenibilidad {
+    width: 50%;
+    height: 465px;
+    object-fit: cover;
+    display: block;
+    padding: 5px;
+    margin-left: 5%;
+    box-shadow: 0px 20px 60px rgba(00, 00, 00, 0.7);
+    border: 5px solid white;
+    transform: scale(0.85);
+    margin-bottom: 40px;
+}
+
+.texto-introduccion p {
+    padding: 10px ;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #ffffff;
+    margin-right: 6%;
+    margin-top: 5%;
+    text-shadow: 2px 2px 0px #000, 
+                 4px 4px 10px rgba(0,0,0,0.8);   
+}
+/* ==========================================================================
+                         CONTAMINACIÓN ATMOSFÉRICA
+    ========================================================================== */
+
+.titulo-contaminacion-atmosferica {
+    text-align: center;
+    padding: 60px 15% 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.titulo-contaminacion-atmosferica h2 {
+    color: #000;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block; 
+    padding-bottom: 15px;
+}
+
+.titulo-contaminacion-atmosferica h2::after {
+    content: "";                         /* Esto no se puede quitar, hace que se pueda poner la raya roja */
+    position: absolute;
+    bottom: 0;
+    left: 50%;                       /* Con esto se ajusta la linea. */
+    transform: translateX(30%);    /* Con esto se ajusta la linea. */
+    width: 200px; 
+    height: 4px; 
+    background-color: #F7444E; 
+    border-radius: 2px; 
+}
+
+
+.info-contaminacion-atmosferica {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    gap: 5rem;
+}
+
+
+.tarjetas-contaminacion-atmosferica {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 2%;
+    width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.50); 
+    display: flex;
+    flex-direction: column;
+    border-bottom: 7px solid transparent; 
+    align-items: stretch
+}
+
+
+.tarjetas-contaminacion-atmosferica:first-child {                      /* Primera tarjeta */
+    border-bottom-color: #3498db; 
+
+}
+
+.tarjetas-contaminacion-atmosferica:last-child {                        /* Segunda tarjeta */
+    border-bottom-color: #ff4d4d; 
+}
+
+.tarjetas-contaminacion-atmosferica h3 {
+    text-align: center; 
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px; 
+}
+
+
+.tarjetas-contaminacion-atmosferica p, 
+.tarjetas-contaminacion-atmosferica li {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.tarjetas-contaminacion-atmosferica ul {
+    padding-left: 20px;
+
+}
+
+.tarjetas-contaminacion-atmosferica strong {
+    color: #222;
+}
+
+
+.mapa-global {
+    background: white;
+    padding: 15px; 
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+    border: 1px solid #eee;
+    overflow: hidden; 
+    margin-bottom: 30px; 
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+}
+
+
+.mapa-global iframe {
+    width: 100%;
+    height: 500px; 
+    border: none;
+    border-radius: 12px; 
+    display: block; 
+}
+
+
+.titulo-mapa {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #000000; 
+    font-weight: 700;
+    margin-top: 4%;
+    
+}
+
+.ayudar-contaminacion-atmosferica {
+    background: #002c3e; 
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 1200px;
+    margin: 60px auto;
+    margin-top: 7%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+    }
+
+.ayudar-contaminacion-atmosferica h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    }
+
+   
+.columnas-ayuda {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    }
+
+.col-ayuda h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    }
+
+.col-ayuda p {
+    line-height: 1.8;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    }
+
+    
+.titulo-azul { 
+    color: #3498db; 
+    }   
+
+.titulo-naranja { 
+    color: #e67e22; 
+    } 
+
+.titulo-verde { 
+    color: #2ecc71; 
+} 
+
+
+ /* ==========================================================================
+                              EVITEMOS ESTO
+   ========================================================================== */
+
+
+
+.evitar-contaminacion-atmosferica{
+    background-color: #002c3e;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 7%;
+}
+
+.imagenes-contaminacion{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.evitar-contaminacion-atmosferica h2{
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 0px #000, 4px 4px 10px rgba(0, 0, 0, 0.8);
+} 
+
+.Contaminacion1 {
+    width: 25%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    padding: 5px;
+    box-shadow: 0px 20px 60px rgba(00, 00, 00, 0.7);
+    border: 5px solid white;
+    transform: scale(0.85);
+    margin-bottom: 40px;
+}
+.Acustica1 {
+    width: 25%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    padding: 5px;
+    box-shadow: 0px 20px 60px rgba(00, 00, 00, 0.7);
+    border: 5px solid white;
+    transform: scale(0.85);
+    margin-bottom: 40px;
+}
+
+.Contaminacion2 {
+    width: 25%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    padding: 5px;
+    box-shadow: 0px 20px 60px rgba(00, 00, 00, 0.7);
+    border: 5px solid white;
+    transform: scale(0.85);
+    margin-bottom: 40px;
+}
+
+
+   /* ==========================================================================
+                            CONTAMINACIÓN ACÚSTICA
+   ========================================================================== */
+
+.titulo-contaminacion-acustica {
+    text-align: center;
+    padding: 60px 15% 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.titulo-contaminacion-acustica h2 {
+    color: #000;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block; 
+    padding-bottom: 15px;
+}
+
+.titulo-contaminacion-acustica h2::after {
+    content: "";                         /* Esto no se puede quitar, hace que se pueda poner la raya roja */
+    position: absolute;
+    bottom: 0;
+    left: 50%;                       /* Con esto se ajusta la linea. */
+    transform: translateX(60%);    /* Con esto se ajusta la linea. */
+    width: 150px; 
+    height: 4px; 
+    background-color: #F7444E; 
+    border-radius: 2px; 
+}
+
+.info-contaminacion-acustica {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    gap: 5rem;
+}
+
+
+.tarjetas-contaminacion-acustica {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 2%;
+    width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.50); 
+    display: flex;
+    flex-direction: column;
+    border-bottom: 7px solid transparent; 
+    align-items: stretch
+}
+
+
+.tarjetas-contaminacion-acustica:first-child {                      /* Primera tarjeta */
+    border-bottom-color: #ff4d4d; 
+}
+
+.tarjetas-contaminacion-acustica:last-child {                        /* Segunda tarjeta */
+    border-bottom-color: #3498db;
+}
+
+.tarjetas-contaminacion-acustica h3 {
+    text-align: center; 
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px; 
+}
+
+
+.tarjetas-contaminacion-acustica p, 
+.tarjetas-contaminacion-acustica li {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.tarjetas-contaminacion-acustica ul {
+    padding-left: 20px;
+
+}
+
+.tarjetas-contaminacion-acustica strong {
+    color: #222;
+}
+
+
+
+
+.ruido {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 30px;
+    color: #000000;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+
+.noise-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+[class^="nivel-barra-"] {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+[class^="nivel-barra-"]:hover {
+    transform: scale(1.02);
+}
+
+
+.nivel-db {
+    width: 120px;
+    padding-left: 15px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+
+.nivel-barra {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 0.85rem;
+}
+
+
+.nivel-barra-seguro { background: #2ecc71; width: 30%; }
+.nivel-barra-moderado { background: #8bc34a; width: 50%; }
+.nivel-barra-dañino { background: #f1c40f; width: 70%; color: #333; }
+.nivel-barra-peligroso { background: #e67e22; width: 85%; }
+.nivel-barra-extremo { background: #e74c3c; width: 100%; }
+
+
+.nota-salud {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #e74c3c;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+
+.ayudar-contaminacion-acustica {
+    background: #002c3e; 
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 1200px;
+    margin: 60px auto;
+    margin-top: 7%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+    }
+
+.ayudar-contaminacion-acustica h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    }
+
+   
+.columnas-ayuda {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    }
+
+.col-ayuda h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    }
+
+.col-ayuda p {
+    line-height: 1.8;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    }
+
+    
+.titulo-azul { 
+    color: #3498db; 
+    }   
+
+.titulo-naranja { 
+    color: #e67e22; 
+    } 
+
+.titulo-verde { 
+    color: #2ecc71; 
+} 
+ /* ==========================================================================
+                              FOOTER
+   ========================================================================== */
+
+.Contaminacion-sostenibilidad {
+    display: flex;
+    align-items: stretch;
+    gap: 4rem;
+    padding: 0;
+    background-color: #002c3e;
+    flex-direction: row-reverse;
+    margin-top: 6%;
+}
+
+.Foto-plantas {
+    width: 44%;
+    height: 465px;
+    object-fit: cover;
+    display: block;
+    padding: 5px;
+    margin-right: 5%;
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.7);
+    border: 5px solid white;
+    transform: scale(0.85);
+}
+
+.Texto-Contaminacion-sostenibilidad {
+    padding: 15px ;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #ffffff;
+    margin-right: 7%;
+    margin-top: 9%;
+    text-shadow: 2px 2px 0px #000, 
+                 4px 4px 10px rgba(0,0,0,0.8);   
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #121212; 
+    color: white;
+} 

@@ -1,0 +1,125 @@
+/* ==========================================================
+   CONFIGURACIÓN GLOBAL PARA EVITAR DESBORDAMIENTO
+   ========================================================== */
+body {
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    width: 100%;
+}
+
+/* ==========================================================
+   TABLETS Y PANTALLAS MEDIANAS (Menos de 1024px)
+   ========================================================== */
+@media (max-width: 1024px) {
+    header {
+        padding: 1rem 5%;
+    }
+
+    /* Quitamos los márgenes laterales excesivos */
+    .mapa-global, .titulo-introduccion, .info-contaminacion-atmosferica, .info-contaminacion-acustica {
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+        width: auto !important;
+    }
+
+    /* Forzamos a que las tarjetas no midan 500px fijos */
+    .tarjetas-contaminacion-atmosferica, 
+    .tarjetas-contaminacion-acustica,
+    .tarjeta-contaminacion {
+        width: 100% !important; 
+        max-width: 450px;
+        margin: 10px auto;
+    }
+
+    .info-contaminacion-atmosferica, .info-contaminacion-acustica {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* ==========================================================
+   MÓVILES (Menos de 768px)
+   ========================================================== */
+@media (max-width: 768px) {
+    
+    /* El Header: Si el menú es muy largo, se verá mal sin JS, 
+       así que lo apilamos con cuidado */
+    header {
+        position: relative; /* Evitamos que tape contenido en móviles */
+        flex-direction: column;
+        height: auto;
+    }
+
+    .menu-arriba {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 10px 0;
+    }
+
+    /* Portada: Ajuste de altura para que no quede un hueco enorme */
+    .Portada {
+        margin-top: 0;
+        height: 70vh;
+        padding: 20px;
+        background-size: cover;
+    }
+
+    .contenido-destacado {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Secciones de Imagen + Texto (Flex direction column) */
+    .texto-introduccion, .Contaminacion-sostenibilidad {
+        flex-direction: column !important;
+        gap: 1rem;
+    }
+
+    .Foto-sostenibilidad, .Foto-plantas {
+        width: 90% !important;
+        height: auto !important;
+        margin: 20px auto !important;
+        transform: scale(1); /* Quitamos el scale para evitar recortes */
+    }
+
+    .texto-introduccion p, .Texto-Contaminacion-sostenibilidad {
+        margin: 10px 20px !important;
+        text-align: left;
+    }
+
+    /* Imágenes de "Evitemos esto" */
+    .imagenes-contaminacion {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Contaminacion1, .Acustica1, .Contaminacion2 {
+        width: 80% !important;
+        height: auto;
+    }
+
+    /* Escala de Ruido: Fundamental para que no se rompa */
+    .noise-chart {
+        padding: 15px;
+    }
+
+    [class^="nivel-barra-"] {
+        width: 100% !important; /* Todas al 100% de su contenedor */
+        font-size: 0.7rem;
+    }
+
+    .nivel-db {
+        width: 70px;
+        padding-left: 5px;
+    }
+}
+
+/* ==========================================================
+   CORRECCIONES DE CSS ORIGINAL (Añade esto al final de style.css o aquí)
+   ========================================================== */
+/* Las líneas rojas (after) se descolocan en móvil, las centramos mejor */
+h2::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
